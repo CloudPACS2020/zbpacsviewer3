@@ -7,6 +7,7 @@ import { createDicomJSONApi } from './DicomJSONDataSource/index';
 import { createDicomLocalApi } from './DicomLocalDataSource/index';
 import { createDicomWebProxyApi } from './DicomWebProxyDataSource/index';
 import { createMergeDataSourceApi } from './MergeDataSource/index';
+import { createZBDataSource } from './ZBDataSource/Index';
 
 /**
  *
@@ -27,6 +28,11 @@ function getDataSourcesModule() {
       name: 'dicomjson',
       type: 'jsonApi',
       createDataSource: createDicomJSONApi,
+    },
+    {
+      name: 'zbpacs',
+      type: 'jsonApi',
+      createDataSource: createZBDataSource,
     },
     {
       name: 'dicomlocal',
